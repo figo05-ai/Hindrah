@@ -11,6 +11,7 @@ import Testimonials from './components/Testimonials';
 import Plans from './components/Plans';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
+import Articles from './components/Articles';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import MobileCTA from './components/MobileCTA';
@@ -34,6 +35,7 @@ export default function App() {
         <ScrollReveal><Plans /></ScrollReveal>
         <ScrollReveal><FAQ /></ScrollReveal>
         <ScrollReveal><Contact /></ScrollReveal>
+        <ScrollReveal><Articles /></ScrollReveal>
         <ScrollReveal><CTA /></ScrollReveal>
         <Footer />
         <MobileCTA />
