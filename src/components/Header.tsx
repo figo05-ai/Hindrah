@@ -49,6 +49,10 @@ export default function Header() {
               className="hd-focus rounded-control font-body text-[length:var(--text-small)] font-semibold text-muted transition-colors hover:text-foreground"
               >الأسئلة</a
             ><a
+              href="#articles"
+              className="hd-focus rounded-control font-body text-[length:var(--text-small)] font-semibold text-muted transition-colors hover:text-foreground"
+              >المدونة</a
+            ><a
               href="#contact"
               className="hd-focus rounded-control font-body text-[length:var(--text-small)] font-semibold text-muted transition-colors hover:text-foreground"
               >تواصل</a
