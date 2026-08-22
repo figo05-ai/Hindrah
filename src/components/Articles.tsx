@@ -3,17 +3,20 @@ export default function Articles() {
     {
       day: "20",
       title: "كيف تبني هيكل تنظيمي مرن لشركتك الناشئة؟",
-      excerpt: "تعرف على أهم الخطوات العملية لبناء هيكل تنظيمي يواكب التغيرات السريعة في سوق العمل ويحافظ على كفاءة الفريق."
+      excerpt: "تعرف على أهم الخطوات العملية لبناء هيكل تنظيمي يواكب التغيرات السريعة في سوق العمل ويحافظ على كفاءة الفريق.",
+      image: "/assets/consulting-Ci8i1JP5.jpg"
     },
     {
       day: "15",
       title: "أهم التحديثات في نظام العمل السعودي 2024",
-      excerpt: "دليلك الشامل لفهم التعديلات الأخيرة في نظام العمل وكيفية تطبيقها في منشأتك لتجنب المخالفات والحفاظ على الامتثال."
+      excerpt: "دليلك الشامل لفهم التعديلات الأخيرة في نظام العمل وكيفية تطبيقها في منشأتك لتجنب المخالفات والحفاظ على الامتثال.",
+      image: "/assets/workplace-C6BAUsa9.jpg"
     },
     {
       day: "05",
       title: "استراتيجيات الاحتفاظ بالمواهب في بيئة تنافسية",
-      excerpt: "لماذا يغادر الموظفون الأكفاء؟ وكيف تبني بيئة عمل جاذبة تحافظ على أفضل المواهب وتزيد من ولائهم وانتاجيتهم."
+      excerpt: "لماذا يغادر الموظفون الأكفاء؟ وكيف تبني بيئة عمل جاذبة تحافظ على أفضل المواهب وتزيد من ولائهم وانتاجيتهم.",
+      image: "/assets/team-meeting-CcIXcP2B.jpg"
     }
   ];
 
@@ -37,7 +40,14 @@ export default function Articles() {
         <div className="-mx-5 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 hd-no-scrollbar sm:mx-0 sm:mt-12 sm:grid sm:grid-cols-2 sm:gap-px sm:overflow-visible sm:border sm:border-border sm:bg-border sm:px-0 lg:grid-cols-3">
           {articles.map((article, index) => (
             <article key={index} className="group relative w-[86%] shrink-0 snap-start rounded-surface border border-border bg-background p-6 transition-colors duration-300 sm:w-auto sm:shrink sm:rounded-none sm:border-0 sm:p-8 sm:hover:bg-surface flex flex-col">
-              <div className="flex items-baseline gap-4">
+              <div className="mb-6 -mx-6 -mt-6 sm:-mx-8 sm:-mt-8 overflow-hidden">
+                <img 
+                  src={article.image} 
+                  alt={article.title} 
+                  className="w-full h-48 object-cover object-center transition-transform duration-500 group-hover:scale-105" 
+                />
+              </div>
+              <div className="flex items-baseline gap-4 mt-2">
                 <span className="font-display text-[length:var(--text-h3)] font-extrabold text-primary">
                   <span dir="ltr" className="hd-num inline-block">{article.day}</span>
                 </span>
@@ -46,12 +56,11 @@ export default function Articles() {
               <p className="mt-4 hd-small text-muted flex-grow">
                 {article.excerpt}
               </p>
-              <ul className="mt-5 space-y-2.5 border-t border-border pt-5">
-                <li className="flex items-center gap-2.5 font-body text-[length:var(--text-caption)] text-muted cursor-pointer group-hover:text-primary transition-colors">
-                  <span aria-hidden="true" className="size-1.5 shrink-0 rounded-pill bg-primary"></span>
+              <div className="mt-5 border-t border-border pt-5">
+                <a href="#" className="inline-flex items-center justify-center gap-2 w-full font-body font-semibold text-[length:var(--text-caption)] border border-primary text-primary hover:bg-primary hover:text-primary-foreground py-2 transition-colors">
                   اقرأ المقال الكامل
-                </li>
-              </ul>
+                </a>
+              </div>
             </article>
           ))}
         </div>
