@@ -61,7 +61,7 @@ export default function Testimonials() {
                   className="mt-8 flex items-center gap-4 border-t border-border pt-5"
                 >
                   <img
-                    src="/assets/portrait-2-DTjkJLqQ.jpg"
+                    src="/assets/portrait-3-DnSz9kA-.jpg"
                     alt="عبدالله الشمري"
                     width="816"
                     height="816"
@@ -92,7 +92,7 @@ export default function Testimonials() {
                   className="mt-8 flex items-center gap-4 border-t border-border pt-5"
                 >
                   <img
-                    src="/assets/portrait-3-DnSz9kA-.jpg"
+                    src="/assets/portrait-2-DTjkJLqQ.jpg"
                     alt="نورة القحطاني"
                     width="816"
                     height="816"
