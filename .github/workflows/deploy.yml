@@ -7,13 +7,25 @@ on:
       - master
 
 jobs:
-  deploy-to-s3-and-invalidate:
-    name: Deploy & Clear Cache
+  build-and-deploy:
+    name: Build and Deploy to S3
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Project
+        run: npm run build
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -22,13 +34,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Sync Files to S3 Bucket
+      - name: Sync Built Files to S3 Bucket
         run: |
-          aws s3 sync . s3://${{ secrets.AWS_S3_BUCKET }} \
+          aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }} \
             --delete \
-            --exclude ".git/*" \
-            --exclude ".github/*" \
-            --exclude "README.md" \
             --no-progress
 
       - name: Invalidate CloudFront Cache
